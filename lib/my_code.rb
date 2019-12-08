@@ -7,9 +7,7 @@ def map_to_negativize(source_array)
 neg = []
 i = 0
   while i < source_array.length do
-    neg.push(yield(source_array[i])*-1)
-    # push manipulated elements into new array
-    # neg_array << source_array[i] * -1
+    neg_array << source_array[i] * -1
     i += 1
   end
   neg
