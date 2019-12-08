@@ -43,7 +43,7 @@ def map_to_square(source_array)
   end
 
 # all reduce methods return a value.
-def reduce_to_total(source_array, starting_point)
+def reduce_to_total(source_array, starting_point=0)
 running_total = starting_point
 i = 0
   while i < source_array.length do
@@ -70,11 +70,11 @@ def reduce_to_any_true(source_array)
   reduce_true = []
   i = 0
   while i < source_array.length do
-    if source_array[i] == true
-      return true
+    if !source_array[i] == true
+      return false
       i += 1
     else
-      return false
+      return true
     end
   end
 end
