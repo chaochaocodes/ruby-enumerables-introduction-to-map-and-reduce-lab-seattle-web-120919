@@ -9,7 +9,7 @@ def map(array)
       i += 1
     end
   new
-end 
+end
 
 map(array).map {|n| n * -1}
 
