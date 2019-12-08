@@ -1,17 +1,27 @@
 # My Code here....
 
 #map methods return a new Array of manipulated elements
-def map_to_negativize(source_array)
-neg = []
-i = 0
-  while i < source_array.length do
-    neg.push(yield(source_array[i])*-1)
-    # push manipulated elements into new array
-    # neg_array << source_array[i] * -1
-    i += 1
-  end
-  neg
-end
+def map(array)
+  new = []
+  i = 0
+  while i < array.length 
+      new.push(yield(array[i]))
+      i += 1
+    end
+  new
+end 
+
+# def map_to_negativize(source_array)
+# neg = []
+# i = 0
+#   while i < source_array.length do
+#     neg.push(yield(source_array[i])*-1)
+#     # push manipulated elements into new array
+#     # neg_array << source_array[i] * -1
+#     i += 1
+#   end
+#   neg
+# end
 
 # block is (map([1,2,3,-9]({|n| n * -1})
 
