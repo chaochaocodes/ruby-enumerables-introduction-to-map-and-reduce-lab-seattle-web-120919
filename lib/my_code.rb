@@ -5,11 +5,14 @@ def map(array)
   new = []
   i = 0
   while i < array.length
-      new.push(yield(-1* array[i]))*1
+      new.push(yield(-1 * array[i]))*1
       i += 1
   end
   new
 end
+
+def reduce
+end 
 
 # map(array) {|n| n * -1}
 
