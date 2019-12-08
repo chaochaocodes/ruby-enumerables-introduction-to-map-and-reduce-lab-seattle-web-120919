@@ -11,7 +11,7 @@ def map(array)
   new
 end
 
-map(array).map {|n| n * -1}
+map(array) {|n| n * -1}
 
 # def map_to_negativize(source_array)
 # neg = []
