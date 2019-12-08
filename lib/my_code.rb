@@ -1,8 +1,4 @@
 # My Code here....
-
-map(array) {|n| n * -1}
-block is (map([1,2,3,-9]({|n| n * -1})
-
 def map_to_negativize(source_array)
 neg = []
 i = 0
