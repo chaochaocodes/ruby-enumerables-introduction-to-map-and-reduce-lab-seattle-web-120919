@@ -1,30 +1,19 @@
 # My Code here....
 
-#map methods return a new Array of manipulated elements
-def map(array)
-  new = []
-  i = 0
-  while i < array.length
-      new.push(yield(-1 * array[i]))*1
-      i += 1
+map(array) {|n| n * -1}
+block is (map([1,2,3,-9]({|n| n * -1})
+
+def map_to_negativize(source_array)
+neg = []
+i = 0
+  while i < source_array.length do
+    neg.push(yield(source_array[i])*-1)
+    # push manipulated elements into new array
+    # neg_array << source_array[i] * -1
+    i += 1
   end
-  new
+  neg
 end
-
-# map(array) {|n| n * -1}
-# block is (map([1,2,3,-9]({|n| n * -1})
-
-# def map_to_negativize(source_array)
-# neg = []
-# i = 0
-#   while i < source_array.length do
-#     neg.push(yield(source_array[i])*-1)
-#     # push manipulated elements into new array
-#     # neg_array << source_array[i] * -1
-#     i += 1
-#   end
-#   neg
-# end
 
 def map_to_no_change(source_array)
   no_change_array = []
@@ -58,31 +47,15 @@ def map_to_square(source_array)
 
 
 # all reduce methods return a value.
-def reduce (array, sv=nil)
-  if sv
-    sum = sv
-    i = 0
-  else
-    sum = array[0]
-    i = 1
-  end
-
-  while i < array.length
-    sum = yield(sum, array[i]) #pass each element to block
+def reduce_to_total(source_array, starting_point=0)
+running_total = starting_point
+i = 0
+  while i < source_array.length do
+    running_total += source_array[i]
     i += 1
   end
-  sum
+  running_total
 end
-
-# def reduce_to_total(source_array, starting_point=0)
-# running_total = starting_point
-# i = 0
-#   while i < source_array.length do
-#     running_total += source_array[i]
-#     i += 1
-#   end
-#   running_total
-# end
 
 def reduce_to_all_true(source_array)
   reduce_true = []
