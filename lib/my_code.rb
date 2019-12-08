@@ -11,10 +11,8 @@ def map(array)
   new
 end
 
-def reduce
-end 
-
 # map(array) {|n| n * -1}
+# block is (map([1,2,3,-9]({|n| n * -1})
 
 # def map_to_negativize(source_array)
 # neg = []
@@ -27,9 +25,6 @@ end
 #   end
 #   neg
 # end
-
-# block is (map([1,2,3,-9]({|n| n * -1})
-
 
 def map_to_no_change(source_array)
   no_change_array = []
@@ -61,16 +56,33 @@ def map_to_square(source_array)
     square_array
   end
 
+
 # all reduce methods return a value.
-def reduce_to_total(source_array, starting_point=0)
-running_total = starting_point
-i = 0
-  while i < source_array.length do
-    running_total += source_array[i]
-    i += 1
+def reduce (array, sv=nil)
+  if sv
+    sum = sv
+    i = 0
+  else
+    sum = array[0]
+    i = 1
   end
-  running_total
+
+  while i < array.length
+    sum = yield(sum, array[i]) #pass each element to block
+    i + = 1
+  end
+  sum 
 end
+
+# def reduce_to_total(source_array, starting_point=0)
+# running_total = starting_point
+# i = 0
+#   while i < source_array.length do
+#     running_total += source_array[i]
+#     i += 1
+#   end
+#   running_total
+# end
 
 def reduce_to_all_true(source_array)
   reduce_true = []
