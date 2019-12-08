@@ -69,9 +69,9 @@ def reduce (array, sv=nil)
 
   while i < array.length
     sum = yield(sum, array[i]) #pass each element to block
-    i + = 1
+    i += 1
   end
-  sum 
+  sum
 end
 
 # def reduce_to_total(source_array, starting_point=0)
