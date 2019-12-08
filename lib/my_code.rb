@@ -1,15 +1,19 @@
 # My Code here....
 
-## all map methods return a new Array.
+#map methods return a new Array of manipulated elements
 def map_to_negativize(source_array)
-neg_array = []
+neg = []
 i = 0
   while i < source_array.length do
-    neg_array << source_array[i] * -1
+    neg.push(yield(source_array[i]))
+    ## push manipulated elements into new array
+    # neg_array << source_array[i] * -1
     i += 1
   end
-neg_array
+  neg
 end
+
+# block is (map([1,2,3,-9]({|n| n * -1})
 
 
 def map_to_no_change(source_array)
